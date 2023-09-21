@@ -1,11 +1,13 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './popup.css'
+import { fetchWeatherData } from '../utils/api'
+import WeatherCard from './components/WeatherCard'
 
 const App: React.FC<{}> = () => {
   return (
     <div>
-      <img src="icon.png" />
+      <WeatherCard city="Denver"/>
     </div>
   )
 }

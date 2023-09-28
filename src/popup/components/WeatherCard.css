@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
 
-body {
-  font-family: 'Inclusive Sans', sans-serif;
 
+.weatherCard-title {
+  font-size: 24px !important;
+  font-family: 'Inclusive Sans', sans-serif !important;
+}
+
+.weatherCard-body {
+  font-size: 16px !important;
+  font-family: 'Inclusive Sans', sans-serif !important;
 }

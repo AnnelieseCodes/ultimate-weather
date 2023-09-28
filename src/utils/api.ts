@@ -21,11 +21,17 @@ export interface openWeatherData {
 	}
 }
 
-export async function fetchWeatherData(city: string): Promise<openWeatherData> {
-	const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${OPEN_WEATHER_API_KEY}`)
+export type OpenWeatherTempScale = 'metric' | 'imperial'
+
+export async function fetchWeatherData(city: string, scale:OpenWeatherTempScale): Promise<openWeatherData> {
+	const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${scale}&appid=${OPEN_WEATHER_API_KEY}`)
 	if (!resp.ok) {
 		throw new Error('city not found')
 	}
 	const data: openWeatherData = await resp.json()
 	return data
+}
+
+export function getWeatherIconSrc(iconCode: string){
+	return `https://openweathermap.org/img/wn/${iconCode}@2x.png`
 }
